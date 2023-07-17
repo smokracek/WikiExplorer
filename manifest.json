@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Wiki Explorer",
+  "version": "1.0",
+  "description": "Wiki Explorer tracks your Wikipedia reading journey!",
+
+  "icons": {
+    "16": "images/icon-16.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://en.wikipedia.org/wiki/*"],
+      "js": ["scripts/content.js"]
+    }
+  ],
+
+  "background": {
+    "service_worker": "service-worker.js",
+    "type": "module"
+  },
+
+  "action": {
+    "default_popup": "hello.html"
+  },
+
+  "permissions": ["storage"]
+}
